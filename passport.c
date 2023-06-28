@@ -10,6 +10,7 @@ int checkName(char *);
 int getAgeFromApplicant();
 int checkAge(int);
 void clearInputBuffer(void);
+//FOURTH
 
 int main(void) {
 
