@@ -11,8 +11,6 @@ int getAgeFromApplicant();
 int checkAge(int);
 void clearInputBuffer(void);
 
-//Something is NOT ADDED 
-
 int main(void) {
 
     char firstName[NAME_SIZE] = "";
@@ -25,22 +23,6 @@ int main(void) {
     printf("Name: %s %s Age = %d\n", firstName, lastName, age);
 
     return 0;
-}
-char* getStringFromUser() {
-
-    int check = 0;
-    static char str[NAME_SIZE];//assuming max character length is 50
-
-    scanf("%[^\n]", str);
-    clearInputBuffer();
-
-    check = checkName(str);//it checks the name character
-
-    if ( check == 0) { // means false in name, let user enter name again
-        printf("Please enter again: ");
-        getStringFromUser(); 
-    } 
-    return str;
 }
 void getFirstNameFromApplicant(char ar[]) {
 
@@ -112,6 +94,22 @@ int checkAge(int age) {
     } else {
         return 1;
     }
+}
+char* getStringFromUser() {
+
+    int check = 0;
+    static char str[NAME_SIZE];//assuming max character length is 50
+
+    scanf("%[^\n]", str);
+    clearInputBuffer();
+
+    check = checkName(str);//it checks the name character
+
+    if ( check == 0) { // means false in name, let user enter name again
+        printf("Please enter again: ");
+        getStringFromUser(); 
+    }
+    return str;
 }
 void clearInputBuffer(void) {
     int c;
