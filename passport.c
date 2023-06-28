@@ -11,6 +11,8 @@ int getAgeFromApplicant();
 int checkAge(int);
 void clearInputBuffer(void);
 
+//Something is added
+
 int main(void) {
 
     char firstName[NAME_SIZE] = "";
