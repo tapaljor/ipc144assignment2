@@ -11,7 +11,7 @@ int getAgeFromApplicant();
 int checkAge(int);
 void clearInputBuffer(void);
 
-//Something is added
+//Something is NOT ADDED 
 
 int main(void) {
 
