@@ -3,36 +3,12 @@
 #include <ctype.h>
 #define NAME_SIZE 50
 
-//gets the first name
-//Parameter:
-// str: array string
-//No return
 void getFirstNameFromApplicant(char str[]); 
-//gets the last name
-//Parameter:
-// str: array string
-//No return
 void getLastNameFromApplicant(char str[]); 
-//gets the string without space 
-//No parameter:
-//No string array 
 char *getStringFromUser(); 
-//checks the name
-//Parameter:
-// str: array string
-//returns 0 (false) if found space/number/special characters, then recalls the function
-//returns 0 (false) if the name is less than 1 character, then recalls the function
 int checkName(char *);
-//gets age from user
-//returns age if age requirements are met
-//returns 0 (false) if age requirement is not met and repeats recalls the function
 int getAgeFromApplicant();
-//checks age reqrirements
-//age should be more or equal to 16
-//returns  
 int checkAge(int);
-//when user gets string or integer
-//buffers is cleared to clean the input buffer to avoid inifinite loop
 void clearInputBuffer(void);
 
 int main(void) {
