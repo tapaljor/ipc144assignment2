@@ -15,11 +15,16 @@ C CODE
 
 void getFirstNameFromApplicant(char *);
 void getLastNameFromApplicant(char *);
+//gets first/last name from user
 char *getStringFromUser();
-int checkName(char *);
+//checks string (read-only)
+int checkName(const char *);
 int getAgeFromApplicant();
-int checkAge(int);
-void clearInputBuffer(void); //clearing the input buffer espcially for Windows computer
+//checks age (read-only)
+int checkAge(const int);
+ //clearing the input buffer espcially for Windows computer
+ //without this function windows computer runs infinite loop when user inputs
+void clearInputBuffer(void);
 
 int main(void) {
 
@@ -57,7 +62,7 @@ void getLastNameFromApplicant(char *ar) {
         printf("Enter your last name: ");
         strcpy(ar, getStringFromUser());
 }
-int checkName(char *str) {
+int checkName(const char *str) {
 
         int checkCharacter = 0;
         int checkAlpha = 0;
@@ -97,7 +102,7 @@ int getAgeFromApplicant() {
             return age;
         }
 }
-int checkAge(int age) {
+int checkAge(const int age) {
 
         if ( age > 16) {
             return 1;
