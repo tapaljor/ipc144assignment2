@@ -13,8 +13,8 @@ C CODE
 #include <ctype.h>
 #define NAME_SIZE 50
 
-void getFirstNameFromApplicant(char str[]);
-void getLastNameFromApplicant(char str[]);
+void getFirstNameFromApplicant(char *);
+void getLastNameFromApplicant(char *);
 char *getStringFromUser();
 int checkName(char *);
 int getAgeFromApplicant();
@@ -38,7 +38,7 @@ int main(void) {
             printf("Name: %s %s Age = %d\n", firstName, lastName, age);
             token++;
 
-            printf("Application successful. \nEnter any key to continue and -1 to exit the application.\n");
+            printf("Application successful. \nEnter any key to continue and -1 to exit.\n");
             scanf("%d", &sentiVal);
             clearInputBuffer();
         }
@@ -47,12 +47,12 @@ int main(void) {
         }
         return 1;
 }
-void getFirstNameFromApplicant(char ar[]) {
+void getFirstNameFromApplicant(char *ar) {
 
         printf("Enter your first name: ");
         strcpy(ar, getStringFromUser());
 }
-void getLastNameFromApplicant(char ar[]) {
+void getLastNameFromApplicant(char *ar) {
 
         printf("Enter your last name: ");
         strcpy(ar, getStringFromUser());
@@ -113,17 +113,17 @@ char *getStringFromUser() {
         scanf("%[^\n]", str);
         clearInputBuffer();
 
-        check = checkName(str); // it checks the name string
+        check = checkName(str); // it checks the name string, expects 1 if conditions met, else 0
 
         if (check == 0) { // means false in name, let user enter name again
             printf("Please enter again: ");
-           getStringFromUser();
+            getStringFromUser();
         }
         return str;
 }
 void clearInputBuffer(void) {
 
-        while (getchar() != '\n') {
-            ; // On purpose: do nothing
-        }
+    while (getchar() != '\n') {
+        ; // On purpose: do nothing
+    }
 }
