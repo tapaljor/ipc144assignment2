@@ -17,10 +17,10 @@ void getFirstNameFromApplicant(char *);
 void getLastNameFromApplicant(char *);
 //gets first/last name from user
 char *getStringFromUser();
-//checks string (read-only)
+//checks string, parameter is read-only
 int checkName(const char *);
 int getAgeFromApplicant();
-//checks age (read-only)
+//checks age, parameter is read-only
 int checkAge(const int);
  //clearing the input buffer espcially for Windows computer
  //without this function windows computer runs infinite loop when user inputs
@@ -43,7 +43,7 @@ int main(void) {
             printf("Name: %s %s Age = %d\n", firstName, lastName, age);
             token++;
 
-            printf("Application successful. \nEnter any key to continue and -1 to exit.\n");
+            printf("%d: Application successful. \nEnter any key to continue and -1 to exit.\n", token);
             scanf("%d", &sentiVal);
             clearInputBuffer();
         }
